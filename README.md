@@ -1,36 +1,53 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
-
+# Instrumentation Amplifier for Electrocardiogram Signal Adquisition
 - [Read the documentation for project](docs/info.md)
 
-## What is Tiny Tapeout?
+## How it works
+An Instrumentation Amplifier (IA) is a circuit that can extract low-level low-frequency differential signals that are embedded in high-level common noise signals. This IA’s ability is due to the value of the Common Mode Rejection Ratio (CMRR) is very high; the CMRR must be grater than 120 dB.  So that, IAs are widely used in biomedical applications, specifically as an analog front-end for electrocardiogram (ECG) data acquisition.
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+Figure 1 shows how the designed IA must be connected as a 3 leads configuration to a human patient to obtain the unfiltered version of the ECG.
 
-To learn more and get started, visit https://tinytapeout.com.
+<p align="center">
+  <img src="docs/latin3_tt_um_CktA_Bien_page-0001.jpg" alt="Figure 1: ECG 3 lead configuration.">
+</p>
+<p align="center">
+  <em>Figure 1: ECG 3 lead configuration.</em>
+</p>
 
-## Analog projects
+## How to test
+Figure 2 shows the top-level bock diagram of the IA with all the inputs an outputs that can be accessed as well as all the hardware thar is needed to perform the CMRR measurements. The purpose of each pin is described as follows:
 
-For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
+- **ua[0].** A 20 uA DC current must be sunk to bias the internal circuitry if the IA. This amount of current is mandatory for proper function.
+- **ua[1].** This pin is the output of the IA. It must be connected to the Reception (Rx) port of the ENA vector analyzer.
+- **ua[2,4].** An Rf resistor must be connected between these terminals.
+- **ua[4].** This terminal must be connected to an analog ground of 0.9 V.
+- **ua[3].** Analog ground of 0.9 V.
+- **ua[5,6].** These two terminals are the IA’s input. A differential signal must be applied to them. To this end, a balun must be places before to convert the Tx single-mode signal coming from the ENA to a differential version.
+- **in[0,1].** This digital pin is a bit control for gain selection. For in[0]=0 and in[1]=0, de differential gain is 10 dB. For in[0]=1 and in[1]=0, de differential gain is 26 dB. For in[0]=1 and in[1]=1, de differential gain is 42 dB. To this end, a pull-up network must be attached to them.
 
-## Enable GitHub actions to build the results page
+After assembling the setup in Figure 1, the ENA must be configured to report the magnitude (in dB) and phase of the circuit. Also, the magnitude must be reported for differential-mode gain and common-mode gain. After that, these two magnitudes must subtracted one from the other to obtain the CMMR.
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+<p align="center">
+  <img src="docs/latin2_tt_um_CktA_page-0001.jpg" alt="Figure 2: IA's testbench.">
+</p>
+<p align="center">
+  <em>Figure 2: IA's testbench.</em>
+</p>
 
-## Resources
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://docs.google.com/document/d/1aUUZ1jthRpg4QURIIyzlOaPWlmQzr-jBn3wZipVUPt4)
+Figure 3 shows the interconnection of the circuit with the frame of the chip and Figure 4 shows the simulation results for reference to the behavior of the circuit.
 
-## What next?
+<p align="center">
+  <img src="docs/latin_tt_um_CktA_page-0001.jpg" alt="Figure 3: Frame to IA connections">
+</p>
+<p align="center">
+  <em>Figure 3: Frame to IA connections</em>
+</p>
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@matthewvenn](https://twitter.com/matthewvenn)
+<p align="center">
+  <img src="docs/tt_um_CktA_InstAmp.jpg" alt="Figure 4. Simulation results.">
+</p>
+<p align="center">
+  <em>Figure 4. Simulation results.</em>
+</p>
