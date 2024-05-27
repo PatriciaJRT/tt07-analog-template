@@ -13,25 +13,24 @@ The designed instrumentation amplifier extracts very low differencial mode signa
 ## How to test
 
 1. Apply a DC level equals to vdd = 1.8V and vss = 0V.
-2. Sinks a DC current of 20 uA into the vbn node.
-3. Set the following bits to Sel_26dB = 0 and Sel_42dB = 0.
-4. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
-5. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 0 dB gain shall be expected.
-6. Apply a 1 mV common signal into Vip and Vin analog ports.
-7. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
-8. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
-9. Set the following bits to Sel_26dB = 1 and Sel_42dB = 0.
-10. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
-11. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 26 dB gain shall be expected.
-12. Apply a 1 mV common signal into Vip and Vin analog ports.
-13. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
-14. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
-15. Set the following bits to Sel_26dB = 1 and Sel_42dB = 1.
-16. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
-17. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 42 dB gain shall be expected.
-18. Apply a 1 mV common signal into Vip and Vin analog ports.
-19. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
-20. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
+2. Set the following bits to Sel_26dB = 0 and Sel_42dB = 0.
+3. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
+4. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 0 dB gain shall be expected.
+5. Apply a 1 mV common signal into Vip and Vin analog ports.
+6. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
+7. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
+8. Set the following bits to Sel_26dB = 1 and Sel_42dB = 0.
+9. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
+10. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 26 dB gain shall be expected.
+11. Apply a 1 mV common signal into Vip and Vin analog ports.
+12. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
+13. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
+14. Set the following bits to Sel_26dB = 1 and Sel_42dB = 1.
+15. Apply a 1 mV differential signal into Vip and Vin analog ports using a balum.
+16. Measure the differential responds at node Vo using Keysight-E5061B ENA vector network analyzer, a 42 dB gain shall be expected.
+17. Apply a 1 mV common signal into Vip and Vin analog ports.
+18. Measure the common responds at node Vo using Keysight-E5061B ENA vector network analyzer.
+19. Performs the substraction of the differential gain and the common gain, the CMRR responds should be obtined.
 
 
 ## External hardware
