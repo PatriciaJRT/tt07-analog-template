@@ -54,11 +54,11 @@ pinout:
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
   ua[0]: "vo"
-  ua[1]: "vbn"
-  ua[2]: "AGND"
-  ua[3]: "VirGND_FB"
-  ua[4]: "VirGND_Out"
-  ua[5]: "Vin"
+  ua[1]: "AGND"
+  ua[2]: "VirGND_FB"
+  ua[3]: "VirGND_Out"
+  ua[4]: "Vin"
+  ua[5]: "Vip"
 
 # Do not change!
 yaml_version: 6
