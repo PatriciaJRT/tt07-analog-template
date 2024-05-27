@@ -28,7 +28,7 @@ Figure 2 shows the top-level bock diagram of the IA with all the inputs an outpu
 After assembling the setup in Figure 1, the ENA must be configured to report the magnitude (in dB) and phase of the circuit. Also, the magnitude must be reported for differential-mode gain and common-mode gain. After that, these two magnitudes must subtracted one from the other to obtain the CMMR.
 
 <p align="center">
-  <img src="docs/latin2_tt_um_CktA.pdf" alt="Figure 2: IA's testbench.">
+  <img src="docs/latin2_tt_um_CktA.png" alt="Figure 2: IA's testbench.">
 </p>
 <p align="center">
   <em>Figure 2: IA's testbench.</em>
@@ -38,7 +38,7 @@ After assembling the setup in Figure 1, the ENA must be configured to report the
 Figure 3 shows the interconnection of the circuit with the frame of the chip and Figure 4 shows the simulation results for reference to the behavior of the circuit.
 
 <p align="center">
-  <img src="docs/latin_tt_um_CktA.pdf" alt="Figure 3: Frame to IA connections">
+  <img src="docs/latin_tt_um_CktA.png" alt="Figure 3: Frame to IA connections">
 </p>
 <p align="center">
   <em>Figure 3: Frame to IA connections</em>
